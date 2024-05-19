@@ -1,7 +1,7 @@
-/* :root:root {
+:root:root {
+  --adm-color-primary: rgba(105, 147, 120, 1);
+}
+
+/* .puple {
   --adm-color-primary: #a062d4;
 } */
-
-.puple {
-  --adm-color-primary: #a062d4;
-}
