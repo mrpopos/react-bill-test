@@ -1,0 +1,44 @@
+.monthlyBill {
+  width: 100%;
+  padding: 0 10px;
+  .content {
+    background-color: #fcdc79;
+    border-radius: 8px;
+    padding: 15px 15px 30px 15px;
+    .header {
+      width: 100%;
+      .date {
+        margin-bottom: 20px;
+        .text {
+          color: #333333;
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+      .twoLineOverview {
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        .item {
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: flex-start;
+          align-items: center;
+          .money {
+            font-size: 14px;
+            color: #333333;
+            font-weight: bold;
+            padding-bottom: 5px;
+          }
+          .type {
+            font-size: 14px;
+            color: #333333;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
