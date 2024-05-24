@@ -9,10 +9,29 @@
       width: 100%;
       .date {
         margin-bottom: 20px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
         .text {
           color: #333333;
           font-size: 16px;
           font-weight: bold;
+          margin-right: 8px;
+        }
+        /* 基本箭头样式 */
+        .arrow {
+          display: inline-block;
+          width: 0;
+          height: 0;
+          border-left: 5px solid transparent; /* 左边透明边 */
+          border-right: 5px solid transparent; /* 右边透明边 */
+          border-top: 8px solid rgb(5, 29, 248); /* 顶部边，箭头颜色 */
+          content: ""; /* 伪元素必须有content属性 */
+          &.expand {
+            border-top: none; /* 移除顶部边 */
+            border-bottom: 8px solid rgb(39, 177, 5); /* 底部边变为箭头颜色，箭头方向改变 */
+          }
         }
       }
       .twoLineOverview {
