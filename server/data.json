@@ -3,6 +3,20 @@
     {
       "id": 1,
       "type": "pay",
+      "money": 9000.99,
+      "date": "2024-05-24 10:36:42",
+      "useFor": "drinks"
+    },
+    {
+      "id": 2,
+      "type": "income",
+      "money": 17500,
+      "date": "2024-05-24 10:36:42",
+      "useFor": "longdistance"
+    },
+    {
+      "id": 1,
+      "type": "pay",
       "money": 99,
       "date": "2024-04-24 10:36:42",
       "useFor": "drinks"

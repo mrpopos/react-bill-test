@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { NavBar, DatePicker } from "antd-mobile";
 import classNames from "classnames";
 import dayjs from "dayjs";
@@ -14,6 +14,12 @@ const Month = () => {
     // return计算之后的值
     return _.groupBy(billList, (item) => dayjs(item.date).format("YYYY / MM"));
   }, [billList]);
+  // 初始化渲染当前月数据
+  useEffect(() => {
+    const formatDate = dayjs(new Date()).format("YYYY / MM");
+    setCurrentMonthList(monthGroup[formatDate] || []);
+    // setCurrentDate(formatDate);
+  }, [monthGroup]);
   const [dateVisible, setDateVisible] = useState(false);
   const [currentDate, setCurrentDate] = useState(() => dayjs(new Date()).format("YYYY / MM"));
   const [currentMonthList, setCurrentMonthList] = useState([]);
