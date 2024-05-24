@@ -1,11 +1,17 @@
 import { useState } from "react";
-import { NavBar, DatePicker, Toast } from "antd-mobile";
+import { NavBar, DatePicker } from "antd-mobile";
 import classNames from "classnames";
+import dayjs from "dayjs";
 
 import "./index.scss";
 
 const Month = () => {
   const [dateVisible, setDateVisible] = useState(false);
+  const [currentDate, setCurrentDate] = useState(() => dayjs(new Date()).format("YYYY / MM"));
+
+  const onConfirm = (date) => {
+    setCurrentDate(dayjs(date).format("YYYY / MM"));
+  };
 
   return (
     <div className="monthlyBill">
@@ -16,7 +22,7 @@ const Month = () => {
         <div className="header">
           {/* 时间切换区域 */}
           <div className="date" onClick={() => setDateVisible(true)}>
-            <span className="text">2023 | 3月份</span>
+            <span className="text">{currentDate}月份</span>
             <span className={classNames("arrow", { expand: dateVisible })}></span>
           </div>
           {/* 统计区域 */}
@@ -35,18 +41,7 @@ const Month = () => {
             </div>
           </div>
           {/* 时间选择器 */}
-          <DatePicker
-            className="kaDate"
-            title="记账日期"
-            visible={dateVisible}
-            max={new Date()}
-            precision="month"
-            onCancel={() => setDateVisible(true)}
-            onClose={() => setDateVisible(false)}
-            onConfirm={(val) => {
-              Toast.show(val.toDateString());
-            }}
-          />
+          <DatePicker className="kaDate" title="记账日期" visible={dateVisible} max={new Date()} precision="month" onCancel={() => setDateVisible(true)} onClose={() => setDateVisible(false)} onConfirm={onConfirm} />
         </div>
       </div>
     </div>
