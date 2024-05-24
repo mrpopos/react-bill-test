@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { NavBar, DatePicker } from "antd-mobile";
 import classNames from "classnames";
 import dayjs from "dayjs";
+import _ from "lodash";
 
 import "./index.scss";
+import { useSelector } from "react-redux";
 
 const Month = () => {
+  // 按月做数组分组
+  const { billList } = useSelector((state) => state.bill);
+  const monthGroup = useMemo(() => {
+    // return计算之后的值
+    return _.groupBy(billList, (item) => dayjs(item.date).format("YYYY / MM"));
+  }, [billList]);
   const [dateVisible, setDateVisible] = useState(false);
   const [currentDate, setCurrentDate] = useState(() => dayjs(new Date()).format("YYYY / MM"));
 
