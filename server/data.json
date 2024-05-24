@@ -3,13 +3,13 @@
     {
       "id": 1,
       "type": "pay",
-      "money": -99,
+      "money": 99,
       "date": "2024-04-24 10:36:42",
       "useFor": "drinks"
     },
     {
       "id": 2,
-      "type": "pay",
+      "type": "income",
       "money": 9998,
       "date": "2024-04-24 10:36:42",
       "useFor": "longdistance"
@@ -17,21 +17,21 @@
     {
       "id": 3,
       "type": "pay",
-      "money": -29,
+      "money": 29,
       "date": "2024-03-24 10:36:42",
       "useFor": "bouns"
     },
     {
       "id": 4,
       "type": "pay",
-      "money": -199,
+      "money": 199,
       "date": "2024-02-24 10:36:42",
       "useFor": "dessert"
     },
     {
       "id": 5,
-      "type": "pay",
-      "money": -36,
+      "type": "income",
+      "money": 36,
       "date": "2024-01-24 10:36:42",
       "useFor": "travel"
     }
